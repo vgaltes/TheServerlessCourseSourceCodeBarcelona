@@ -5038,6 +5038,18 @@ serve-static@1.14.1:
     parseurl "~1.3.3"
     send "0.17.1"
 
+serverless-iam-roles-per-function@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/serverless-iam-roles-per-function/-/serverless-iam-roles-per-function-2.0.2.tgz#c64eb2f34552e59d5fb8cb2169ebbd27734a6774"
+  integrity sha512-3zv4Af3x7KJHC4fuJMHniEEstCljMghReaYIg94Spdsqkhiy8GJ3yfJ5Jy+wiG/DvyObK91JJNMjLhDnDc+vCQ==
+  dependencies:
+    lodash "^4.17.15"
+
+serverless-pseudo-parameters@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/serverless-pseudo-parameters/-/serverless-pseudo-parameters-2.5.0.tgz#f30bf34db166e4b8b22144a8e65aca71b90dd1e6"
+  integrity sha512-A/O49AR8LL6jlnPSmnOTYgL1KqVgskeRla4sVDeS/r5dHFJlwOU5MgFilc7aaQP8NWAwRJANaIS9oiSE3I+VUA==
+
 serverless@^1.54.0:
   version "1.54.0"
   resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.54.0.tgz#f7518d49887bfc3d5b7fcd634b6de44ea8c305f7"
