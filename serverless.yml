@@ -8,10 +8,10 @@ provider:
 
 functions:
   helloWorld:
-    handler: src/functions/helloWorld.handler
+    handler: src/functions/getGetTogethers.handler
     events:
       - http:
-          path: api/helloWorld/{name}
+          path: api/getTogethers
           method: get
 
 resources:
