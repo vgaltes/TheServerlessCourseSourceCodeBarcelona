@@ -23,5 +23,8 @@
     "serverless": "^1.54.0",
     "superagent": "^5.1.0",
     "superagent-promise": "^1.1.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.552.0"
   }
 }
