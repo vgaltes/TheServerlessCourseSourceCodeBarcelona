@@ -17,7 +17,7 @@ custom:
   joinGetTogetherSnsTopicName: ${self:provider.stage}-joingettogethers
 
 functions:
-  helloWorld:
+  getGetTogethers:
     handler: src/functions/getGetTogethers.handler
     events:
       - http:
