@@ -18,7 +18,7 @@ custom:
   joinGetTogetherSnsTopic: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${self:custom.joinGetTogetherSnsTopicName}
 
 functions:
-  helloWorld:
+  getGetTogethers:
     handler: src/functions/getGetTogethers.handler
     events:
       - http:
