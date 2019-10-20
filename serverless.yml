@@ -3,12 +3,7 @@ service: gettogether
 plugins:
   - serverless-pseudo-parameters
   - serverless-iam-roles-per-function
-
-package:
-  exclude: 
-    - cloudwatch-logs-to-logzio/**
-    - tests/**
-    
+  
 provider:
   name: aws
   runtime: nodejs10.x
