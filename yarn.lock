@@ -138,17 +138,26 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dazn/lambda-powertools-correlation-ids@^1.8.2":
+"@dazn/lambda-powertools-correlation-ids@^1.5.0", "@dazn/lambda-powertools-correlation-ids@^1.8.2":
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/@dazn/lambda-powertools-correlation-ids/-/lambda-powertools-correlation-ids-1.8.2.tgz#2d8156f9723d59825d57c0a71ca289a6b851546b"
   integrity sha512-zZvahepZI7vC3qvT+z0eVXbt9gJ6vHK0UJcw2IZ5EOhocYfOJhNsaGIv6HdOp8nDGAQkVLH8IY3Ih/wLoBU4Lg==
 
-"@dazn/lambda-powertools-logger@^1.9.0":
+"@dazn/lambda-powertools-logger@^1.8.0", "@dazn/lambda-powertools-logger@^1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@dazn/lambda-powertools-logger/-/lambda-powertools-logger-1.9.0.tgz#b9e56a3fcfa4b4dc4a858e9a52f740f1db1eb343"
   integrity sha512-EN3pxPVWVxn3sr3j/Gfn72A/H8Af8RLyj3FcsSw4kDptG/s46vWP/EYUwecOO02OqX7G+OEObG7AI8+QEgWvCA==
   dependencies:
     "@dazn/lambda-powertools-correlation-ids" "^1.8.2"
+
+"@dazn/lambda-powertools-middleware-correlation-ids@^1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@dazn/lambda-powertools-middleware-correlation-ids/-/lambda-powertools-middleware-correlation-ids-1.14.0.tgz#d9eac69ee4dadf49908e428b31fdcd1dda4a945a"
+  integrity sha512-ShuGOxdm9RxCURqyrO9SZHENSNEe317cLdAEbyiITTwAGdp5L6IFsL7XrWPOx2faoSdowNepyLJUmKtxg2IfAQ==
+  dependencies:
+    "@dazn/lambda-powertools-correlation-ids" "^1.5.0"
+    "@dazn/lambda-powertools-logger" "^1.8.0"
+    aws-sdk "^2.496.0"
 
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
@@ -772,6 +781,21 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+aws-sdk@^2.496.0:
+  version "2.553.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.553.0.tgz#a82c611015138db8f720e0079fe929a65b359a8e"
+  integrity sha512-tcITF/3ijBumvP13Qrq/VB1eRWW6szKF0xVwZ/ch0MGkaEiTQ9n3zNRPtQc1drllsVEm5u5aXp3inoi5zmq0xg==
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.13"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.3.2"
+    xml2js "0.4.19"
 
 aws-sdk@^2.545.0, aws-sdk@^2.552.0:
   version "2.552.0"
