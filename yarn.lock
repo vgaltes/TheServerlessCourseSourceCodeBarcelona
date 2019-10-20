@@ -138,6 +138,18 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@dazn/lambda-powertools-correlation-ids@^1.8.2":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@dazn/lambda-powertools-correlation-ids/-/lambda-powertools-correlation-ids-1.8.2.tgz#2d8156f9723d59825d57c0a71ca289a6b851546b"
+  integrity sha512-zZvahepZI7vC3qvT+z0eVXbt9gJ6vHK0UJcw2IZ5EOhocYfOJhNsaGIv6HdOp8nDGAQkVLH8IY3Ih/wLoBU4Lg==
+
+"@dazn/lambda-powertools-logger@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@dazn/lambda-powertools-logger/-/lambda-powertools-logger-1.9.0.tgz#b9e56a3fcfa4b4dc4a858e9a52f740f1db1eb343"
+  integrity sha512-EN3pxPVWVxn3sr3j/Gfn72A/H8Af8RLyj3FcsSw4kDptG/s46vWP/EYUwecOO02OqX7G+OEObG7AI8+QEgWvCA==
+  dependencies:
+    "@dazn/lambda-powertools-correlation-ids" "^1.8.2"
+
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.9.0.tgz#79b1bc06fb74a8cfb01cbdedf945584b1b9707f0"
