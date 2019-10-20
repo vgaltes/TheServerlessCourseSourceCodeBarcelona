@@ -7,7 +7,7 @@ provider:
   stage: dev
 
 functions:
-  helloWorld:
+  getGetTogethers:
     handler: src/functions/getGetTogethers.handler
     events:
       - http:
