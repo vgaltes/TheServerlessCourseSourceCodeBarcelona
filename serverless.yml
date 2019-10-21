@@ -4,6 +4,7 @@ plugins:
   - serverless-pseudo-parameters
   - serverless-iam-roles-per-function
   - serverless-plugin-tracing
+  - serverless-plugin-epsagon
 
 package:
   exclude: 
@@ -31,6 +32,9 @@ custom:
   joinGetTogetherSnsTopic: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${self:custom.joinGetTogetherSnsTopicName}
   notifyOrganiserDLQSnsTopicName: ${self:provider.stage}-joingettogetherdlq
   notifyOrganiserDLQSnsTopic: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${self:custom.notifyOrganiserDLQSnsTopicName}
+  epsagon:
+    token: 4631348e-1228-44f4-937b-0a503d298a8c
+    appName: ${self:provider.stage}-gettogether-bcn
 
 functions:
   getGetTogethers:
