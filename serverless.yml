@@ -21,6 +21,8 @@ custom:
   getTogethersTableName:  ${self:provider.stage}-gettogethers
   joinGetTogetherSnsTopicName: ${self:provider.stage}-joingettogethers
   joinGetTogetherSnsTopic: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${self:custom.joinGetTogetherSnsTopicName}
+  notifyOrganiserDLQSnsTopicName: ${self:provider.stage}-joingettogetherdlq
+  notifyOrganiserDLQSnsTopic: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${self:custom.notifyOrganiserDLQSnsTopicName}
 
 functions:
   getGetTogethers:
@@ -38,10 +40,22 @@ functions:
         Resource: arn:aws:ssm:#{AWS::Region}:#{AWS::AccountId}:parameter/gettogethers/${self:provider.stage}/*
     environment:
       getTogethersTableNamePath: /gettogethers/${self:provider.stage}/secureTableName
+
   notifyOrganiser:
     handler: src/functions/notifyOrganiser.handler
     events:
       - sns: ${self:custom.joinGetTogetherSnsTopicName}
+    onError: ${self:custom.notifyOrganiserDLQSnsTopic}
+    iamRoleStatements:
+      - Effect: Allow
+        Action: sns:Publish
+        Resource: ${self:custom.notifyOrganiserDLQSnsTopic}
+
+  notifyOrganiserDLQ:
+    handler: src/functions/notifyOrganiserDLQ.handler
+    events:
+      - sns: ${self:custom.notifyOrganiserDLQSnsTopicName}  
+
   joinGetTogether:
     handler: src/functions/joinGetTogether.handler
     events:
@@ -54,6 +68,7 @@ functions:
       - Effect: Allow
         Action: sns:Publish
         Resource: ${self:custom.joinGetTogetherSnsTopic}
+
   testAutoSubscribe:
     handler: src/functions/testAutoSubscribe.handler
     events:
@@ -80,7 +95,7 @@ resources:
       Properties:
         Location:
           ApplicationId: arn:aws:serverlessrepo:us-east-1:374852340823:applications/auto-subscribe-log-group-to-arn
-          SemanticVersion: 1.9.2
+          SemanticVersion: 1.9.3
         Parameters:
           DestinationArn: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:cloudwatch-logs-to-logzio-bcn-${self:provider.stage}-ship-logs-to-logzio
           Prefix: "/aws/lambda"

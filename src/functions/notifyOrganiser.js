@@ -4,6 +4,10 @@ const correlationIds = require('@dazn/lambda-powertools-middleware-correlation-i
 
 const handler = async (event, context) => {
     const orderPlaced = JSON.parse(event.Records[0].Sns.Message);
+
+    if (orderPlaced.getTogetherId === "error"){
+        throw new Error("Simulating error");
+    }
   
     Log.info('notified organiser', { getTogetherId: orderPlaced.getTogetherId, orderId: orderPlaced.orderId, userEmail: orderPlaced.userEmail});
   
