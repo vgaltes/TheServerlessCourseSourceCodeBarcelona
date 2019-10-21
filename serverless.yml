@@ -80,7 +80,7 @@ resources:
       Properties:
         Location:
           ApplicationId: arn:aws:serverlessrepo:us-east-1:374852340823:applications/auto-subscribe-log-group-to-arn
-          SemanticVersion: 1.9.2
+          SemanticVersion: 1.9.3
         Parameters:
           DestinationArn: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:cloudwatch-logs-to-logzio-bcn-${self:provider.stage}-ship-logs-to-logzio
           Prefix: "/aws/lambda"
