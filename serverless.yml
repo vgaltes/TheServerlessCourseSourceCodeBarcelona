@@ -43,6 +43,10 @@ functions:
       - http:
           path: api/getTogethers
           method: get
+          cors: true
+          authorizer:
+            name: authorizer
+            arn: arn:aws:cognito-idp:#{AWS::Region}:#{AWS::AccountId}:userpool/eu-west-1_PM7q7l7wr
     iamRoleStatementsInherit: true
     iamRoleStatements:
       - Effect: Allow

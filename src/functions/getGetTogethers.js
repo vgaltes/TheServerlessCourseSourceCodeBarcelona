@@ -19,8 +19,6 @@ const handler = async (evt, context) => {
   const count = 8;
   const tableName = context.tableName;
 
-  http.get('http://vgaltes.com');
-
   const req = {
     TableName: tableName,
     Limit: count
@@ -30,6 +28,9 @@ const handler = async (evt, context) => {
 
   const res = {
     statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
     body: JSON.stringify(resp.Items)
   };
 
