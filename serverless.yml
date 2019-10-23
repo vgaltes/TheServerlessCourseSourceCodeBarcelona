@@ -10,6 +10,7 @@ package:
   exclude: 
     - cloudwatch-logs-to-logzio/**
     - tests/**
+    - WebAuth/**
 
 provider:
   name: aws
