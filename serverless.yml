@@ -116,3 +116,20 @@ resources:
           DestinationArn: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:cloudwatch-logs-to-logzio-bcn-${self:provider.stage}-ship-logs-to-logzio
           Prefix: "/aws/lambda"
           OverrideManualConfigs: true
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UserPoolName: ${self:provider.stage}-testauthsls-user-pool
+        # Allow email addresses to be used as username
+        UsernameAttributes:
+          - email
+        AutoVerifiedAttributes:
+          - email
+
+    CognitoUserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        ClientName: ${self:provider.stage}-testauthsls--user-pool-client
+        UserPoolId:
+          Ref: CognitoUserPool
+        GenerateSecret: false
