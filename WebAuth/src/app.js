@@ -1,7 +1,5 @@
 import Amplify, { Auth, API } from 'aws-amplify';
 
-console.log('Hello man.');
-
 Amplify.configure({
     Auth: {
         // REQUIRED - Amazon Cognito Region
@@ -20,8 +18,7 @@ Amplify.configure({
         endpoints: [
             {
                 name: "MyAPIGatewayAPI",
-                endpoint: "https://t4ki88sqp5.execute-api.eu-west-1.amazonaws.com",
-                region: "eu-west-1"
+                endpoint: "https://t4ki88sqp5.execute-api.eu-west-1.amazonaws.com"
             }
         ]
     }
